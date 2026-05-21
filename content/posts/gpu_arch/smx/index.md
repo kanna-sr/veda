@@ -1,5 +1,5 @@
 +++
-date = '2026-04-30T18:47:16-04:00'
+date = '2026-05-21'
 draft = false
 title = 'NVIDIA Streaming Multiprocessor (SMX)'
 +++

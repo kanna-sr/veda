@@ -1,5 +1,5 @@
 +++
-date = '2026-04-30T18:47:16-04:00'
+date = '2026-04-30'
 draft = false
 title = 'NVIDIA GeForce GPU Architecture'
 +++

@@ -1,22 +1,32 @@
-[caches]
-  [caches.assets]
-    dir = ':resourceDir/_gen'
-    maxAge = -1
-  [caches.getresource]
-    dir = ':cacheDir/:project'
-    maxAge = -1
-  [caches.images]
-    dir = ':resourceDir/_gen'
-    maxAge = -1
-  [caches.misc]
-    dir = ':cacheDir/:project'
-    maxAge = -1
-  [caches.modulegitinfo]
-    dir = ':cacheDir/modules'
-    maxAge = '24h'
-  [caches.modulequeries]
-    dir = ':cacheDir/modules'
-    maxAge = '24h'
-  [caches.modules]
-    dir = ':cacheDir/modules'
-    maxAge = -1
+# The absolute URL to your site. 
+# Replace 'username' with your actual GitHub username.
+baseURL = 'https://kanna-sr.github.io/'
+languageCode = 'en-us'
+title = 'Hardware Security & AI Writeups'
+theme = 'PaperMod'
+
+# Prevents pathing bugs on case-sensitive Linux hosting (like GitHub Actions)
+disablePathToLower = false
+
+[params]
+    env = "production"
+    description = "Deep dives into GPU internals, NVISA reverse engineering, and hardware security."
+    
+    # PaperMod specific settings for technical blogs
+    defaultTheme = "auto" # Switches between dark/light based on OS preference
+    ShowToc = true        # Automatically display Table of Contents on posts
+    TocOpen = true        # Keep TOC open by default on desktop layouts
+
+[menu]
+    [[menu.main]]
+        name = "Posts"
+        url = "/posts/"
+        weight = 10
+    [[menu.main]]
+        name = "Tags"
+        url = "/tags/"
+        weight = 20
+
+# Minifies HTML, CSS, and JS to make your static site load blazingly fast
+[minify]
+    minifyOutput = true

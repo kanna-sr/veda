@@ -30,4 +30,4 @@ The goal of the memory controller is to ensure the SMXs always have data, since 
 
 ## Device: Streaming Multiprocessor (SMX)
 
-The SMX can be logistically broken down into three processing units: scheduling, execution, and networking/memory. See the [SMX Deep Dive](/posts/gpu_arch/smx/) for a full breakdown.
+The SMX can be logistically broken down into three processing units: scheduling, execution, and networking/memory. See the [SMX Deep Dive](/veda/posts/gpu_arch/smx/) for a full breakdown.

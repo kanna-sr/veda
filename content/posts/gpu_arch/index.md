@@ -1,6 +1,6 @@
 +++
 date = '2026-04-30T18:47:16-04:00'
-draft = true
+draft = false
 title = 'NVIDIA GeForce GPU Architecture'
 +++
 

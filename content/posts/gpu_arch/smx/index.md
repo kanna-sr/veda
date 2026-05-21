@@ -6,6 +6,8 @@ description: "The SMX can be logistically broken down into three processing unit
 
 The SMX can be logistically broken down into three processing units: scheduling, execution, and networking/memory.
 
+![SMX](SMX.png)
+
 ## SMX: Scheduling
 
 The scheduling units load the instruction from the instruction cache, and the dispatch unit determines which execution component to send it to. The Warp Scheduler manages threads.

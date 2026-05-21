@@ -38,6 +38,5 @@ The goal of the memory controller is to ensure the SMXs always have data since t
         * Ensures SMX cores and L2 cache have data
 
 
-#### [Streaming Multiprocessor (SMX)]({{< ref "smx/index.md" >}})
-The SMX can be logistically broken down into three processing units: scheduling, execution and networking/memory.
+#### [Device: Streaming Multiprocessor (SMX)]({{< ref "posts/gpu_arch/smx/index.md" >}})
 

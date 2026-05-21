@@ -19,12 +19,12 @@ disablePathToLower = false
 
 [menu]
     [[menu.main]]
-        name = "Posts"
-        url = "/posts/"
+        name = "Home"
+        url = "/"
         weight = 10
     [[menu.main]]
-        name = "Tags"
-        url = "/tags/"
+        name = "SMX Deep Dive"
+        url = "/posts/gpu_arch/smx"
         weight = 20
 
 # Minifies HTML, CSS, and JS to make your static site load blazingly fast

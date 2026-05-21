@@ -2,7 +2,7 @@
 # Replace 'username' with your actual GitHub username.
 baseURL = 'https://kanna-sr.github.io/'
 languageCode = 'en-us'
-title = 'Hardware Security & AI Writeups'
+title = 'NVIDIA GPU'
 theme = 'PaperMod'
 
 # Prevents pathing bugs on case-sensitive Linux hosting (like GitHub Actions)

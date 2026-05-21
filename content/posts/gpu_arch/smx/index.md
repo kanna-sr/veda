@@ -4,7 +4,6 @@ draft = false
 title = 'NVIDIA Streaming Multiprocessor (SMX)'
 +++
 
-# Streaming Multiprocessor (SMX)
 The SMX can be logistically broken down into three processing units: scheduling, execution and networking/memory.
 
 ### SMX: Scheduling
@@ -16,6 +15,7 @@ The scheduling units load the instruction from the instruction cache and the dis
     * Warp scheduler manages threads and decides which ones should be executed
     * Dispatch unit - gets instructions from scheduler and send instruction to execution components of SMX (Core, DPU)
 
+<br><br>
 ### SMX: Execution
 The exeuction units read data from register file, do some processing and writes the answer back to register file data bus. The instruction being executed determines which hardware to use. The LD/ST units are used to move data from memory (L1, L2, Global) to the register file.
 
@@ -28,6 +28,7 @@ The exeuction units read data from register file, do some processing and writes 
      * LD/ST - move data between register file and memory (L1, L2, Global Memory)
 	   * There’s ld/st for data from cache before instruction execution
 
+<br><br>
 ### SMX: Networking and Memory
 ![SMX Networking and Memory](SMX_Networking.png)
    * Interconnect Network: connects execution units to local memory and cache

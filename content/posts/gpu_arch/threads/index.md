@@ -24,7 +24,15 @@ The WARP scheduler determines which WARP (e.g., 32 threads) to execute. Once the
 
 The SMX execution units (Cuda, DPU, SFU, LD/ST cores) may not have 32 cores available, in which case the instruction would be executed over multiple clock cycles (e.g., 32 threads/4 units = 8 cycles).
 
-## How do threads interface with the register file?
+## How do threads interface with the register file? AKA Logical Splitting of Register File
 NVIDIA promises that threads get their own slice of the register file, so two threads do not share the same register. SMX hardware promises N registers per thread, so Thread 1's R5 doesn't impact Thread 2's R5. 
 
-Once the instruction is done being executed, the core writes the data back to the register file. If 32 cores have computed "ADD r5, r4, r1, rz" to execute r5 = r4+r1, then all 32 cores need to access and write to the r5 register. How to we prevent all 32 threads from accessing the same r5 register address?
+Once the instruction is done being executed, the core writes the data back to the register file. If 32 cores have computed "ADD r5, r4, r1, rz" to execute r5 = r4+r1, then all 32 cores need to access and write to the r5 register. How to we prevent all 32 threads from accessing the same r5 register address? The WARP Base Pointer plus some thread context. The WARP Base Pointer lets you know where where the base of the register file for a thread starts. 
+
+**Physical Address = WARP Base Pointer + (Register Index * WARP Size) + Thread**
+
+Assuming there are 32 threads in the WARP:
+
+- **Thread 1** R5 physical address = WARP Base + (5 * 32) + 1
+- **Thread 2** R5 physical address = WARP Base + (5 * 32) + 2
+

@@ -4,7 +4,7 @@ date: 2026-05-22
 description: "Register Files on SMX"
 ---
 
-![SMX](SMX.png)
+![SMX](register_file.png)
 
 ## Register File
 

@@ -21,13 +21,23 @@ The "Host" CPU interfaces with the "Device" GPU through PCIe buses. The CPU writ
 
 ## Device: Memory Controller
 
-The goal of the memory controller is to ensure the SMXs always have data, since they are constantly doing work. When an SMX requests data, it first goes to the L2 cache — if that fails, the L2 cache forwards the request to the memory controller to retrieve from global memory/VRAM.
+The memory controller manages data flow between SMX units and Global Memory/VRAM by servicing global memory requests. When an SMX requests data, it first goes to the L2 cache — if that fails, the L2 cache forwards the request to the memory controller to retrieve from global memory/VRAM.
 
-- Each memory controller maps to a portion of the L2 cache and a corresponding section of physical VRAM
-- The L2 cache determines which memory controller to query based on the requested address
-- The memory controller performs address translation between logical and physical memory addresses
-- Manages data flow between SMX units and Global Memory/VRAM
+Each memory controller maps to a portion of the L2 cache and a corresponding section of physical VRAM. The L2 cache determines which memory controller to query based on the requested address. The memory controller performs address translation between logical and physical memory addresses. 
+
+![Memory Controller](memory_controller.png)
 
 ## Device: Streaming Multiprocessor (SMX)
 
 The SMX can be logistically broken down into three processing units: scheduling, execution, and networking/memory. See the [SMX Deep Dive](/veda/posts/gpu_arch/smx/) for a full breakdown.
+
+
+## GPU Caching 
+
+1. Each SMX checks its L1 cache first if the information is not in the [register file](/veda/posts/gpu_arch/register_file)
+2. The SMX requests the L2 cache which is shared across all SMXs via interconnect network
+3. If the L2 cache does not have the answer, it forwards the request to the appropriate memory controller. The L2 cache knows which memory controller will own part of the global physical address 
+4. The memory controller maps logical address to physical global memory/VRAM
+5. Global Memory -> Memory Controller -> L2 cache -> SMX L1 cache -> SMX Register file
+
+The GPU will try to coalesce trips to minimize the number of requests. If multiple memory requests are near each other, they can be serviced once as a one large request.

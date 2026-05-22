@@ -18,6 +18,8 @@ The scheduling units load the instruction from the instruction cache, and the di
 - **Warp Scheduler** — manages threads and decides which ones should be executed
 - **Dispatch Unit** — receives instructions from the scheduler and forwards them to the appropriate execution components of the SMX (Core, DPU)
 
+See the [GPU Threads](/veda/posts/gpu_arch/threads/) for how threads work on the GPU.
+
 ## SMX: Execution
 
 The execution units read data from the register file, perform processing, and write the result back to the register file data bus. The instruction being executed determines which hardware unit is used. The LD/ST units move data between memory (L1, L2, Global) and the register file.

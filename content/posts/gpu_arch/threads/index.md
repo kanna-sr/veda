@@ -36,3 +36,12 @@ Assuming there are 32 threads in the WARP:
 - **Thread 1** R5 physical address = WARP Base + (5 * 32) + 1
 - **Thread 2** R5 physical address = WARP Base + (5 * 32) + 2
 
+
+## CPU vs GPU Threads
+
+CPU: threads share a core and each thread gets its own register
+GPU: threads sahre a core and each thread gets its own register
+
+The difference comes down to implementation.
+
+![CPU vs GPU threads](cpu_vs_gpu_threads.png)

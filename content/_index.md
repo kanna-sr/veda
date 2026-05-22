@@ -9,7 +9,7 @@ The "Host" CPU interfaces with the "Device" GPU through PCIe buses. The CPU writ
 
 ![CPU and GPU Architecture](cpu_gpu.png)
 
-## Device
+### Device
 
 - **CPU** — manages the GPU via commands, kernel code, and data over the PCIe bus
 - **Global Memory** — primary VRAM for the GPU
@@ -19,7 +19,7 @@ The "Host" CPU interfaces with the "Device" GPU through PCIe buses. The CPU writ
 - **L2 Cache** — shared cache used by all SMXs, avoiding round-trips to global memory
 - **Memory Controller** — queried when an SMX request to the L2 cache fails; handles address translation and fetches data from VRAM
 
-## Device: Memory Controller
+### Device: Memory Controller
 
 The memory controller manages data flow between SMX units and Global Memory/VRAM by servicing global memory requests. When an SMX requests data, it first goes to the L2 cache — if that fails, the L2 cache forwards the request to the memory controller to retrieve from global memory/VRAM.
 
@@ -27,12 +27,12 @@ Each memory controller maps to a portion of the L2 cache and a corresponding sec
 
 ![Memory Controller](memory_controller.png)
 
-## Device: Streaming Multiprocessor (SMX)
+### Device: Streaming Multiprocessor (SMX)
 
 The SMX can be logistically broken down into three processing units: scheduling, execution, and networking/memory. See the [SMX Deep Dive](/veda/posts/gpu_arch/smx/) for a full breakdown.
 
 
-## GPU Caching 
+### GPU Caching 
 
 1. Each SMX checks its L1 cache first if the information is not in the [register file](/veda/posts/gpu_arch/register_file)
 2. The SMX requests the L2 cache which is shared across all SMXs via interconnect network

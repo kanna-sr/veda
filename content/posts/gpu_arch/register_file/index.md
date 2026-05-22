@@ -16,7 +16,7 @@ The register file is split physically and logically.
 
 ## Physical Split
 
-The register file is split into 4+ "banks' for multi-operand instructions, e.g., multiply and add. Splitting in into banks avoids having a port per thread.
+The register file is split into 4+ "banks" for multi-operand instructions, e.g., multiply and add. Splitting in into banks avoids having a port per thread.
 
 Bank System:
 - **Bank 0**: r0, r4, r8

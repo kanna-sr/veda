@@ -20,4 +20,11 @@ The SMX hardware executes threads as a WARP. The SMX is the factory floor, where
 
 ![Warp Scheduler](SMX_Scheduling.png)
 
+The WARP scheduler determines which WARP (e.g., 32 threads) to execute. Once the WARP is chosen, the instruction is loaded into the dispatch unit and sent to 32 cores to be processed at the same time for the 32 threads.
 
+The SMX execution units (Cuda, DPU, SFU, LD/ST cores) may not have 32 cores available, in which case the instruction would be executed over multiple clock cycles (e.g., 32 threads/4 units = 8 cycles).
+
+## How do threads interface with the register file?
+NVIDIA promises that threads get their own slice of the register file, so two threads do not share the same register. SMX hardware promises N registers per thread, so Thread 1's R5 doesn't impact Thread 2's R5. 
+
+Once the instruction is done being executed, the core writes the data back to the register file. If 32 cores have computed "ADD r5, r4, r1, rz" to execute r5 = r4+r1, then all 32 cores need to access and write to the r5 register. How to we prevent all 32 threads from accessing the same r5 register address?

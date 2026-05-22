@@ -18,7 +18,7 @@ The scheduling units load the instruction from the instruction cache, and the di
 - **Warp Scheduler** — manages threads and decides which ones should be executed
 - **Dispatch Unit** — receives instructions from the scheduler and forwards them to the appropriate execution components of the SMX (Core, DPU)
 
-See the [GPU Threads](/veda/posts/gpu_arch/threads/) for how threads work on the GPU.
+See the [GPU Threads](/veda/posts/gpu_arch/threads/) for how threads are managed by the Warp Scheduler on the GPU.
 
 ## SMX: Execution
 
@@ -31,6 +31,9 @@ The execution units read data from the register file, perform processing, and wr
 - **DPU (Double Precision Unit)** — specialized FP64 (double precision) unit, typically used for scientific simulations
 - **SFU (Special Function Units)** — handles complex transcendental math (sin, cos, square root, log)
 - **LD/ST (Load/Store Units)** — move data between the register file and memory (L1, L2, Global Memory)
+
+See the [Register File](/veda/posts/gpu_arch/register_file/) for how threads are managed by the Warp Scheduler on the GPU.
+
 
 ## SMX: Networking and Memory
 

@@ -1,6 +1,6 @@
 ---
-title: "MAIN"
-description: "TEST"
+title: "Main Blog"
+description: "Main Rambling"
 ---
 
-TESTING
+Welcome! Here are some security deep dive topics I've been interested in. I hope you may also find them interesting!

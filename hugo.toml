@@ -2,7 +2,7 @@
 # Replace 'username' with your actual GitHub username.
 baseURL = 'https://kanna-sr.github.io/'
 languageCode = 'en-us'
-title = 'NVIDIA GPU'
+title = 'VEDA'
 theme = 'PaperMod'
 
 # Prevents pathing bugs on case-sensitive Linux hosting (like GitHub Actions)
@@ -23,9 +23,14 @@ disablePathToLower = false
         url = "/"
         weight = 10
     [[menu.main]]
-        name = "SMX Deep Dive"
-        url = "/posts/gpu_arch/smx"
+        name = "NVIDIA"
+        url = "/content/posts/gpu_arch/"
         weight = 20
+    [[menu.main]]
+        name = "Vouchers"
+        url = "/content/posts/vouchers/"
+        weight = 20
+
 
 # Minifies HTML, CSS, and JS to make your static site load blazingly fast
 [minify]

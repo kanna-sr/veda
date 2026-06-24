@@ -39,8 +39,7 @@ Assuming there are 32 threads in the WARP:
 
 ## CPU vs GPU Threads
 
-CPU: threads share a core and each thread gets its own register
-GPU: threads sahre a core and each thread gets its own register
+CPU: threads share a core and each thread gets its own register and GPU: threads share a core and each thread gets its own register?
 
 The difference comes down to implementation.
 

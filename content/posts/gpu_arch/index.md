@@ -34,7 +34,7 @@ The SMX can be logistically broken down into three processing units: scheduling,
 
 ### GPU Caching 
 
-1. Each SMX checks its L1 cache first if the information is not in the [register file](/veda/posts/gpu_arch/register_file)
+1. Each SMX checks its L1 cache first if the information is not in the [register file](/veda/posts/gpu_arch/register_file/)
 2. The SMX requests the L2 cache which is shared across all SMXs via interconnect network
 3. If the L2 cache does not have the answer, it forwards the request to the appropriate memory controller. The L2 cache knows which memory controller will own part of the global physical address 
 4. The memory controller maps logical address to physical global memory/VRAM

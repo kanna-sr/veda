@@ -22,6 +22,14 @@ disablePathToLower = false
         name = "Home"
         url = "/"
         weight = 10
+    [[menu.main]]
+        name = "NVIDIA"
+        url = "/content/posts/gpu_arch/"
+        weight = 15
+    [[menu.main]]
+        name = "Vouchers"
+        url = "/content/posts/vouchers/"
+        weight = 14
 
 # Minifies HTML, CSS, and JS to make your static site load blazingly fast
 [minify]

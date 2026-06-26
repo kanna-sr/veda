@@ -30,6 +30,11 @@ disablePathToLower = false
         name = "Vouchers"
         url = "/content/posts/vouchers/"
         weight = 14
+    [[menu.main]]
+        name = "Heap Interals"
+        url = "/content/posts/heap/"
+        weight = 14
+
 
 # Minifies HTML, CSS, and JS to make your static site load blazingly fast
 [minify]

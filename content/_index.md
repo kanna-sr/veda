@@ -12,4 +12,4 @@ I am updating the blog with new material, so things may not work as expected.  P
  * heap internals
  * nvidia geforce 
 
-Welcome! Here are some security deep dive topics I've been interested in. I hope you may also find them interesting!
+
